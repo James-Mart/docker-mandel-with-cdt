@@ -55,7 +55,6 @@ RUN make -j $(nproc)
 RUN make install
 
 # Run Mandel tests
-# [Not needed for system contract development]
 ## RUN npm install
 ## RUN ctest -j $(nproc) -LE "nonparallelizable_tests|long_running_tests" -E "full-version-label-test|release-build-test|print-build-info-test"
 ## RUN ctest -L "nonparallelizable_tests"
@@ -84,8 +83,8 @@ RUN cmake                                   \
 RUN make -j $(nproc)
 
 # Run system contract tests
-WORKDIR /root/mandel-contracts/build/tests
-RUN ctest -j $(nproc)
+## WORKDIR /root/mandel-contracts/build/tests
+## RUN ctest -j $(nproc)
 
 
 ################################################################################
